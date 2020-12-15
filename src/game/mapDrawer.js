@@ -15,7 +15,7 @@ function MapDrawer(map)
   
                 if (key != 0)
                 {
-                    image(tile.image, 80 * j, 80 * i)
+                    image(tile.image, 64 * j, 64 * i)
                 }
             }
         }
@@ -32,7 +32,7 @@ function MapDrawer(map)
   
                 if (key != 0)
                 {
-                    image(tile.image, 80 * j, 80 * i)
+                    image(tile.image, 64 * j, 64 * i)
                 }
             }
         }

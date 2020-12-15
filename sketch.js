@@ -8,7 +8,7 @@ function preload()
 
 function setup()
 {
-  createCanvas(640, 480)
+  createCanvas(1280, 768)
   game.setup()
 }
 
