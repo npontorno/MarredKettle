@@ -1,0 +1,14 @@
+{
+    "1": 
+    {
+      "id": 1,
+      "image": "character1",
+
+      "uid": 0,
+      "name": "Character",
+      "type": "Character",
+
+      "xpos": 0,
+      "ypos": 0
+    }
+}

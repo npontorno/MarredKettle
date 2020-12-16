@@ -41,4 +41,23 @@ function TileLoader(map)
            gameMap.foregroundDict[keys[i]].image = loadImage(url)
         }
     }
+
+    this.loadEntities1 = function()
+    {
+        loadJSON("src/objects/entityDict.json", this.loadEntities2)
+    }
+    
+    this.loadEntities2 = function(entityDict)
+    {
+        gameMap.entityDict = entityDict
+      
+        let keys = Object.keys(gameMap.entityDict)
+      
+        for (let i = 0; i < keys.length; i++)
+        {
+           let image = gameMap.entityDict[keys[i]].image
+           let url = "src/sprites/entities/" + image + ".png"
+           gameMap.entityDict[keys[i]].image = loadImage(url)
+        }
+    }
 }
