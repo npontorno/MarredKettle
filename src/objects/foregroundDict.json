@@ -21,5 +21,17 @@
   {
     "id": 4,
     "image": "mushroom2"
+  },
+
+  "5": 
+  {
+    "id": 5,
+    "image": "tree1"
+  },
+
+  "6": 
+  {
+    "id": 6,
+    "image": "character1"
   }
 }

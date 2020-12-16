@@ -10,7 +10,7 @@ function Game()
   
     this.setup = function()
     {
-        this.map.mapLoader.loadMap1("templateMap")
+        this.map.mapLoader.loadMap1("templateMap2")
     }
   
     this.render = function()
