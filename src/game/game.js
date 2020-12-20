@@ -2,7 +2,9 @@ function Game()
 {
     this.test = false
 
-    this.map = new Map();
+    this.map = new Map(this)
+    //this.userInput = new UserInput()
+    this.actionProcessor = new ActionProcessor()
   
     this.preload = function()
     {
@@ -16,6 +18,21 @@ function Game()
         this.map.mapLoader.loadMap1("templateMap")
     }
   
+    /*this.checkInput = function(keyCode)
+    {
+        this.userInput.checkInput(keyCode)
+    }*/
+
+    this.processInput = function(keyCode)
+    {
+        this.actionProcessor.processInput(keyCode)
+    }
+
+    this.updateGameState = function()
+    {
+        this.map.entityTracker.update()
+    }
+
     this.render = function()
     {
         if (this.test == false)

@@ -1,6 +1,6 @@
 var thisMap
 
-function Map()
+function Map(game)
 {
     thisMap = this
   
@@ -18,5 +18,5 @@ function Map()
     this.tileLoader = new TileLoader(this)
     this.mapLoader = new MapLoader(this)
     this.mapDrawer = new MapDrawer(this)
-    this.entityTracker = new EntityTracker(this)
+    this.entityTracker = new EntityTracker(this, game)
 }

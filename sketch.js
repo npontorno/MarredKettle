@@ -14,10 +14,19 @@ function setup()
 
 function draw()
 {
-  background(0)
+  if (!keyIsDown(keyCode))
+  {
+    keyCode = 0
+  }
+
+  //game.checkInput(keyCode)
   
+  game.processInput(keyCode)
+  game.updateGameState()
+
   try
   {
+    background(0)
     game.render()
   }
   

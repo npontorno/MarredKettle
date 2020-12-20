@@ -1,6 +1,6 @@
 var gameMap
 
-function EntityTracker(map)
+function EntityTracker(map, game)
 {
     gameMap = map
 
@@ -17,5 +17,31 @@ function EntityTracker(map)
 
         this.entityList[uid.toString()] = entity
         gameMap.entities[xpos][ypos] = entity.uid
+
+        if (id == 1)
+        {
+            game.actionProcessor.character = entity
+        }
+    }
+
+    this.update = function()
+    {
+        let entityMap = gameMap.entities
+
+        for (let i = 0; i < entityMap.length; i++)
+        {
+            for (let j = 0; j < entityMap[i].length; j++)
+            {
+                entityMap[i][j] = 0
+            }
+        }
+
+        for (let key in this.entityList)
+        {
+            let entity = this.entityList[key]
+            entityMap[entity.ypos][entity.xpos] = entity.uid
+        }
+
+        gameMap.entities = entityMap
     }
 }
