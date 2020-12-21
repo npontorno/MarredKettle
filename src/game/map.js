@@ -8,11 +8,13 @@ function Map(game)
     this.height = 0
 
     this.backgroundDict = {}
-    this.foregroundDict = {}
+    this.foreground1Dict = {}
+    this.foreground2Dict = {}
     this.entityDict = {}
   
     this.background = []
-    this.foreground = []
+    this.foreground1 = []
+    this.foreground2 = []
     this.entities = []
 
     this.tileLoader = new TileLoader(this)

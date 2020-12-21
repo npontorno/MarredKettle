@@ -16,7 +16,7 @@ function EntityTracker(map, game)
         entity.ypos = ypos
 
         this.entityList[uid.toString()] = entity
-        gameMap.entities[xpos][ypos] = entity.uid
+        gameMap.entities[ypos][xpos] = entity.uid
 
         if (id == 1)
         {

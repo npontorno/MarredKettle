@@ -23,22 +23,41 @@ function TileLoader(map)
         }
     }
   
-    this.loadForeground1 = function()
+    this.loadForeground1_1 = function()
     {
-        loadJSON("src/objects/foregroundDict.json", this.loadForeground2)
+        loadJSON("src/objects/foreground1Dict.json", this.loadForeground1_2)
     }
     
-    this.loadForeground2 = function(foregroundDict)
+    this.loadForeground1_2 = function(foreground1Dict)
     {
-        gameMap.foregroundDict = foregroundDict
+        gameMap.foreground1Dict = foreground1Dict
       
-        let keys = Object.keys(gameMap.foregroundDict)
+        let keys = Object.keys(gameMap.foreground1Dict)
       
         for (let i = 0; i < keys.length; i++)
         {
-           let image = gameMap.foregroundDict[keys[i]].image
-           let url = "src/sprites/foreground/" + image + ".png"
-           gameMap.foregroundDict[keys[i]].image = loadImage(url)
+           let image = gameMap.foreground1Dict[keys[i]].image
+           let url = "src/sprites/foreground1/" + image + ".png"
+           gameMap.foreground1Dict[keys[i]].image = loadImage(url)
+        }
+    }
+
+    this.loadForeground2_1 = function()
+    {
+        loadJSON("src/objects/foreground2Dict.json", this.loadForeground2_2)
+    }
+    
+    this.loadForeground2_2 = function(foreground2Dict)
+    {
+        gameMap.foreground2Dict = foreground2Dict
+      
+        let keys = Object.keys(gameMap.foreground2Dict)
+      
+        for (let i = 0; i < keys.length; i++)
+        {
+           let image = gameMap.foreground2Dict[keys[i]].image
+           let url = "src/sprites/foreground2/" + image + ".png"
+           gameMap.foreground2Dict[keys[i]].image = loadImage(url)
         }
     }
 

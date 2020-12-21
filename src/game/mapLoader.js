@@ -14,7 +14,8 @@ function MapLoader(map)
         gameMap.width = loadedMap.width
         gameMap.height = loadedMap.height
         gameMap.background = loadedMap.background
-        gameMap.foreground = loadedMap.foreground
+        gameMap.foreground1 = loadedMap.foreground1
+        gameMap.foreground2 = loadedMap.foreground2
         gameMap.entities = loadedMap.entities
     }
 }

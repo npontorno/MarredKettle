@@ -9,7 +9,8 @@ function Game()
     this.preload = function()
     {
         this.map.tileLoader.loadBackground1()
-        this.map.tileLoader.loadForeground1()
+        this.map.tileLoader.loadForeground1_1()
+        this.map.tileLoader.loadForeground2_1()
         this.map.tileLoader.loadEntities1()
     }
   
@@ -42,7 +43,8 @@ function Game()
         }
 
         this.map.mapDrawer.drawBackground()
-        this.map.mapDrawer.drawForeground()
+        this.map.mapDrawer.drawForeground1()
         this.map.mapDrawer.drawEntities()
+        this.map.mapDrawer.drawForeground2()
     }
 }
