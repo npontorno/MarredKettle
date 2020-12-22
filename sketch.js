@@ -1,4 +1,5 @@
 var game
+var previousKey
 
 function preload()
 {
@@ -12,16 +13,19 @@ function setup()
   game.setup()
 }
 
+function keyPressed()
+{
+  previousKey = keyCode
+  game.processInput(keyCode)
+}
+
 function draw()
 {
-  if (!keyIsDown(keyCode))
+  if (keyIsDown(previousKey))
   {
-    keyCode = 0
+    game.processInput(previousKey)
   }
-
-  //game.checkInput(keyCode)
   
-  game.processInput(keyCode)
   game.updateGameState()
 
   try

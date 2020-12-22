@@ -1,9 +1,7 @@
 function Game()
 {
     this.test = false
-
     this.map = new Map(this)
-    //this.userInput = new UserInput()
     this.actionProcessor = new ActionProcessor()
   
     this.preload = function()
@@ -18,11 +16,6 @@ function Game()
     {
         this.map.mapLoader.loadMap1("templateMap")
     }
-  
-    /*this.checkInput = function(keyCode)
-    {
-        this.userInput.checkInput(keyCode)
-    }*/
 
     this.processInput = function(keyCode)
     {
