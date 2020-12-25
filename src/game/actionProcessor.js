@@ -28,7 +28,7 @@ function ActionProcessor()
 
     this.processInput = function(keyCode)
     {
-        print(keyCode)
+        //print(keyCode)
         if (this.character == null)
         {
             return
