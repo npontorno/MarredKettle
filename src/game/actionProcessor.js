@@ -1,29 +1,53 @@
 var gameCharacter
 
-function ActionProcessor()
+function ActionProcessor(collisionDetector)
 {
     this.character = null
-
     this.debouncer = new Debouncer()
+    this.collisionDetector = collisionDetector
 
-    this.moveUp = function(character)
+    this.moveUp = function()
     {
-        gameCharacter.ypos--
+        let newPos = gameCharacter.ypos
+        newPos--
+
+        if (!collisionDetector.checkCollisions(gameCharacter.xpos, newPos))
+        {
+            gameCharacter.ypos = newPos
+        }
     }
 
-    this.moveDown = function(character)
-    {
-        gameCharacter.ypos++
+    this.moveDown = function()
+    {   
+        let newPos = gameCharacter.ypos
+        newPos++
+
+        if (!collisionDetector.checkCollisions(gameCharacter.xpos, newPos))
+        {
+            gameCharacter.ypos = newPos
+        }
     }
 
-    this.moveLeft = function(character)
+    this.moveLeft = function()
     {
-        gameCharacter.xpos--
+        let newPos = gameCharacter.xpos
+        newPos--
+
+        if (!collisionDetector.checkCollisions(newPos, gameCharacter.ypos))
+        {
+            gameCharacter.xpos = newPos
+        }
     }
 
-    this.moveRight = function(character)
+    this.moveRight = function()
     {
-        gameCharacter.xpos++
+        let newPos = gameCharacter.xpos
+        newPos++
+
+        if (!collisionDetector.checkCollisions(newPos, gameCharacter.ypos))
+        {
+            gameCharacter.xpos = newPos
+        }
     }
 
     this.processInput = function(keyCode)

@@ -2,7 +2,8 @@ function Game()
 {
     this.test = false
     this.map = new Map(this)
-    this.actionProcessor = new ActionProcessor()
+    this.collisionDetector = new CollisionDetector(this.map)
+    this.actionProcessor = new ActionProcessor(this.collisionDetector)
   
     this.preload = function()
     {
