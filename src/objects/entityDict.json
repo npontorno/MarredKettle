@@ -3,6 +3,7 @@
     {
       "id": 1,
       "image": "character1",
+      "imageYOffset": -1,
 
       "uid": 0,
       "name": "Character",

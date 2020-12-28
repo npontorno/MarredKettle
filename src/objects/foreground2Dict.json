@@ -2,6 +2,8 @@
   "1": 
   {
     "id": 1,
-    "image": "tree1"
+    "image": "tree1",
+    "imageYOffset": -1,
+    "collisionOffset": [[1, 0]]
   }
 }
