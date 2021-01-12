@@ -1,5 +1,5 @@
 var game
-var previousKey
+var previousKey = 0
 
 function preload()
 {

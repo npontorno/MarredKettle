@@ -36,9 +36,12 @@ function Game()
             this.map.entityTracker.add(1, 4, 6)
         }
 
-        this.map.mapDrawer.drawBackground()
-        this.map.mapDrawer.drawForeground1()
-        this.map.mapDrawer.drawEntities()
-        this.map.mapDrawer.drawForeground2()
+        for (let i = 0; i < this.map.height; i++)
+        {
+            this.map.mapDrawer.drawBackground(i)
+            this.map.mapDrawer.drawForeground1(i)
+            this.map.mapDrawer.drawEntities(i)
+            this.map.mapDrawer.drawForeground2(i)
+        }
     }
 }
