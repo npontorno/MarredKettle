@@ -17,8 +17,8 @@ function Map(game)
     this.foreground2 = []
     this.entities = []
 
+    this.entityTracker = new EntityTracker(this, game)
     this.tileLoader = new TileLoader(this)
     this.mapLoader = new MapLoader(this)
-    this.mapDrawer = new MapDrawer(this)
-    this.entityTracker = new EntityTracker(this, game)
+    this.mapDrawer = new MapDrawer(this, this.entityTracker)
 }

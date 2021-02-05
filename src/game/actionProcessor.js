@@ -1,20 +1,22 @@
 var gameCharacter
 
-function ActionProcessor(collisionDetector)
+function ActionProcessor(collisionDetector, camera)
 {
     this.character = null
     this.debouncer = new Debouncer()
     this.collisionDetector = collisionDetector
+    this.camera = camera
 
     this.moveUp = function()
     {
         let newPos = gameCharacter.ypos
         newPos--
 
-        if (!collisionDetector.checkCollisions(gameCharacter.xpos, newPos))
-        {
+        //if (!collisionDetector.checkCollisions(gameCharacter.xpos, newPos))
+        //{
             gameCharacter.ypos = newPos
-        }
+            this.camera.updateCameraPosition1(gameCharacter.xpos, gameCharacter.ypos)
+       // }
     }
 
     this.moveDown = function()
@@ -25,6 +27,7 @@ function ActionProcessor(collisionDetector)
         if (!collisionDetector.checkCollisions(gameCharacter.xpos, newPos))
         {
             gameCharacter.ypos = newPos
+            this.camera.updateCameraPosition1(gameCharacter.xpos, gameCharacter.ypos)
         }
     }
 
@@ -36,6 +39,7 @@ function ActionProcessor(collisionDetector)
         if (!collisionDetector.checkCollisions(newPos, gameCharacter.ypos))
         {
             gameCharacter.xpos = newPos
+            this.camera.updateCameraPosition1(gameCharacter.xpos, gameCharacter.ypos)
         }
     }
 
@@ -47,6 +51,7 @@ function ActionProcessor(collisionDetector)
         if (!collisionDetector.checkCollisions(newPos, gameCharacter.ypos))
         {
             gameCharacter.xpos = newPos
+            this.camera.updateCameraPosition1(gameCharacter.xpos, gameCharacter.ypos)
         }
     }
 

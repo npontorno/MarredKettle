@@ -1,8 +1,10 @@
 var gameMap
 
-function MapDrawer(map)
+function MapDrawer(map, entityTracker)
 {
     gameMap = map
+
+    this.entityTracker = entityTracker
     this.drawUtil = new DrawUtil()
 
     this.drawBackground = function()
@@ -63,7 +65,7 @@ function MapDrawer(map)
             for (let j = 0; j < gameMap.width; j++)
             {
                 let key = gameMap.entities[i][j]
-                let entity = gameMap.entityTracker.entityList[key.toString()]
+                let entity = this.entityTracker.entityList[key.toString()]
   
                 if (key > 0)
                 {
